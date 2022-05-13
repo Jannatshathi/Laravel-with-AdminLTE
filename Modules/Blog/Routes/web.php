@@ -1,7 +1,6 @@
 <?php
 
-use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\StudentsController;
+use Modules\Blog\Http\Controllers\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,11 +13,10 @@ use App\Http\Controllers\StudentsController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+Route::get('/test', function(){
+    return 'welcome';
 });
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
-
+//Blog
+Route::resource('/blog','BlogController');
